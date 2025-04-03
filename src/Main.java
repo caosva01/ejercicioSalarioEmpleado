@@ -30,6 +30,7 @@ public static void main(String[] args) {
     double valorHora= 0;
     double cantidadHoras = 0;
     double bonificacionEmpleado = 0;
+    double valorsalariominimo = 0;
     int auxilioTransporte = 200000;
 
     System.out.printf("Ingrese su usuario: ");
@@ -37,7 +38,28 @@ public static void main(String[] args) {
     System.out.printf("Ingrese su contraseña: ");
     contrasenaUsuario = sc.nextLine();
     if(usuarioEmpleado.equals("admin") && contrasenaUsuario.equals("admin")){
-        System.out.print("Ha ingresado de forma correcta");
+        System.out.println("Ha ingresado de forma correcta");
+        System.out.print("Ingrese el nombre del empleado: ");
+        nombreEmpleado = sc.nextLine();
+        System.out.print("Ingrese su documento de identidad: ");
+        documentoIdentidad =sc.nextLine();
+        System.out.print("Ingrese el dia de descanso (lunes a viernes): ");
+        diaDescanso = sc.nextLine();
+        System.out.print("Ingrese el valor de la hora");
+        valorHora = sc.nextDouble();
+        System.out.printf("Ingrese la cantidad de horas trabajadas");
+        cantidadHoras =sc.nextDouble();
+        salarioBruto = valorHora * cantidadHoras
+        System.out.println("Ingrese el valor del salario minimo para este año");
+        if(salarioBruto > (valorsalariominimo*2)){
+            bonificacionEmpleado =0;
+            auxilioTransporte =0;
+        } else {
+            bonificacionEmpleado = salarioBruto*0.1;
+            auxilioTransporte = 200000;
+        }
+        salarioNeto = salarioBruto + bonificacionEmpleado + auxilioTransporte
+                System.out.println("el salario neto es: ");salarioNeto
     } else{
         System.out.printf("Error de credenciales");
     }
