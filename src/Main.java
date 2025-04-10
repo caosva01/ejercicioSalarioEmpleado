@@ -45,21 +45,27 @@ public static void main(String[] args) {
         documentoIdentidad =sc.nextLine();
         System.out.print("Ingrese el dia de descanso (lunes a viernes): ");
         diaDescanso = sc.nextLine();
-        System.out.print("Ingrese el valor de la hora");
+        System.out.print("Ingrese el valor de la hora: ");
         valorHora = sc.nextDouble();
-        System.out.printf("Ingrese la cantidad de horas trabajadas");
+        System.out.printf("Ingrese la cantidad de horas trabajadas: ");
         cantidadHoras =sc.nextDouble();
-        salarioBruto = valorHora * cantidadHoras
-        System.out.println("Ingrese el valor del salario minimo para este año");
+        salarioBruto = valorHora * cantidadHoras;
+        System.out.println("Ingrese el valor del salario minimo para este año: ");
         if(salarioBruto > (valorsalariominimo*2)){
             bonificacionEmpleado =0;
             auxilioTransporte =0;
         } else {
             bonificacionEmpleado = salarioBruto*0.1;
             auxilioTransporte = 200000;
+
+            retencionSalud = salarioBruto*0.04;
+            retencionPension = salarioBruto*0.04;
+            salarioNeto = salarioBruto - retencionSalud - retencionPension + auxilioTransporte + bonificacionEmpleado;
+            System.out.println("detalle de nomina del empleado: ");
+            System.out.println("el empleado " + nombreEmpleado + " con documento de identidad " + documentoIdentidad +
+            " tiene el siguiente detalle :\nsalarioBruto: " + salarioBruto + "\nsalarioNeto: " + salarioNeto + "\ndeduccion por salud: " + retencionSalud + "\ndeduccion por pension: " + retencionPension + "\nauxilio de transporte: " + auxilioTransporte + "\nbonificacion del 10%: " + bonificacionEmpleado);
         }
-        salarioNeto = salarioBruto + bonificacionEmpleado + auxilioTransporte
-                System.out.println("el salario neto es: ");salarioNeto
+        
     } else{
         System.out.printf("Error de credenciales");
     }
